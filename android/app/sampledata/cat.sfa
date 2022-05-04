@@ -1,0 +1,100 @@
+{
+  materials: [
+    {
+      name: 'GoogleAR_StingrayPBS_StingrayPBS',
+      parameters: [
+        {
+          baseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColor: '128567d77d16d0afd912d338da13f18f591e3786',
+        },
+        {
+          diffuseColorFactor: null,
+        },
+        {
+          diffuseColor: null,
+        },
+        {
+          normal: '277cdb214a37d963d45b45502fede1f2b03dffba',
+        },
+        {
+          metallicFactor: 1,
+        },
+        {
+          roughnessFactor: 1,
+        },
+        {
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: '96a3a34702e99d4118925810dc0760923581c043',
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/cat.glb',
+    name: 'cat',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      name: '128567d77d16d0afd912d338da13f18f591e3786',
+      pipeline_name: '*0',
+    },
+    {
+      name: '96a3a34702e99d4118925810dc0760923581c043',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: '*1',
+    },
+    {
+      name: '277cdb214a37d963d45b45502fede1f2b03dffba',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: '*2',
+    },
+  ],
+  version: '0.54:2',
+}

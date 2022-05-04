@@ -1,0 +1,27 @@
+import 'locale_key.dart';
+
+Map<String, String> english={
+  LocaleKey.start:"START",
+  LocaleKey.cat:"Cat",
+  LocaleKey.catDescription:"Cats are one of, if not the most, popular pet in the world. Cats conserve energy by sleeping for an average of 13 to14 hours a day. Cats have flexible bodies and teeth adapted for hunting small animals such as mice and rats. A group of cats is called a clowder, a male cat is called a tom, a female cat is called a molly or queen while young cats are called kittens. Cats have excellent hearing and a powerful sense of smell.",
+  LocaleKey.dog:"Dog",
+  LocaleKey.dogDescription:"Dogs have a really great sense of smell, They can smell up to 100,000 times better than humans can. Dogs noses are wet to absorb scent chemicals. Dogs are very clever. So clever in fact, there are jobs for dogs. These jobs help us in many different ways. Dogs are very fast runners, They can run up to 45 miles per hour. Dogs can sniff at the same time as breathing. Some dogs are incredible swimmers.",
+  LocaleKey.bear:"Bear",
+  LocaleKey.bearDescription:"All bears – except for polar bears and Giant Pandas – are omnivores (eating both meat and plants).Bears are territorial, meaning that they will fight other bears in order to protect and keep their own land.  Bears will find food, shelter, and mates in this territory . All bears have an excellent sense of smell, allowing them to sniff out food, mates, and their cubs (baby bears). Brown bears live in northwestern North America and throughout Europe and Asia. Brown bears often get into dangerous fights over salmon-rich territories.",
+  LocaleKey.tiger:"Tiger",
+  LocaleKey.tigerDescription:"Tiger is a powerful big cat with a distinctive coat of dark orange with black stripes. they live in Asia. Tigers can live to 20 years of age in zoos but only 15 years in the wild. Tigers are great swimmers. One averaged sized tiger can eat up to 60 pounds of meat at a single time. Most tigers have more than 100 stripes. Their stripes are much like a fingerprint, because no two tigers are exactly alike.",
+  LocaleKey.shark:"Shark",
+  LocaleKey.sharkDescription:"Sharks use their gills to filter oxygen from the water. They are a special type of fish known as elasmobranchs, which translates into fish made of cartilaginous tissues—the clear gristly stuff that your ears and nose tip are made of. This category also includes rays, sawfish, and skates. Their cartilaginous skeletons are much lighter than true bone and their large livers are full of low-density oils, both helping them to be buoyant.",
+  LocaleKey.snake:"Snake",
+  LocaleKey.snakeDescription:"Snakes are Deaf and Cannot Hear Sounds. Snakes Live Longer in Zoos Than in the Wild. Most snakes have around 200 teeth that allow them to chew their food. Although some snakes have eyes, they cannot see properly even in the day and although they rely on the sense of smell, snakes don’t have noses. One of the most interesting ones is their ability to breathe underwater ,They can do this partially through their skin.",
+  LocaleKey.sound:"Sound",
+  LocaleKey.quize:"Quize",
+  LocaleKey.AR:"Augmented Reality",
+  LocaleKey.setting:"setting",
+  LocaleKey.connectUs:"connect us",
+  LocaleKey.quitApp:"quit app",
+  LocaleKey.language:"language",
+  LocaleKey.arabic:"arabic",
+  LocaleKey.english:"english",
+  LocaleKey.aboutUs:"about us",
+};

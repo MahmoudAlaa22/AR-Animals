@@ -1,0 +1,109 @@
+{
+  materials: [
+    {
+      name: 'unnamed material',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: '9ce5fdf3167ef67a5763d6653917013ecca9ef70',
+        },
+        {
+          normal: '2c5f5749ece08a60d3e104f1094ed57619056d30',
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: '787b507c3635f17347e16ecf70aa65137e6f16b5',
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: '483d889ac1e714acb9652d172262c482c319c3ba',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/shark.glb',
+    name: 'shark',
+    recenter: 'root',
+    scale: 0.166268,
+  },
+  samplers: [
+    {
+      name: '9ce5fdf3167ef67a5763d6653917013ecca9ef70',
+      pipeline_name: '*2',
+    },
+    {
+      name: '787b507c3635f17347e16ecf70aa65137e6f16b5',
+      pipeline_name: '*3',
+    },
+    {
+      name: '483d889ac1e714acb9652d172262c482c319c3ba',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: '*1',
+    },
+    {
+      name: '2c5f5749ece08a60d3e104f1094ed57619056d30',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: '*0',
+    },
+  ],
+  version: '0.54:2',
+}

@@ -1,0 +1,108 @@
+{
+  materials: [
+    {
+      name: 'unnamed material',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: '4c9e266526b9ac7251eb4fb0b72b797896c4c9d2',
+        },
+        {
+          normal: '73b667e5b54d659b54699441aba731491b6d6a8b',
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: 'c65a48fa9842ff2cd5660cf0930dbe876457a913',
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: 'faf3d53225f3b56efeba84a731784cdc0c820a60',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/tiger.glb',
+    name: 'tiger',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      name: '4c9e266526b9ac7251eb4fb0b72b797896c4c9d2',
+      pipeline_name: '*2',
+    },
+    {
+      name: 'c65a48fa9842ff2cd5660cf0930dbe876457a913',
+      pipeline_name: '*3',
+    },
+    {
+      name: 'faf3d53225f3b56efeba84a731784cdc0c820a60',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: '*1',
+    },
+    {
+      name: '73b667e5b54d659b54699441aba731491b6d6a8b',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: '*0',
+    },
+  ],
+  version: '0.54:2',
+}
