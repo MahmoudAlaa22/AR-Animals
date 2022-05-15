@@ -1,4 +1,5 @@
 import 'package:arcore_flutter_plugin_example/common/controller/localizations/locale_key.dart';
+import 'package:arcore_flutter_plugin_example/module/animal_quaz/animal_quaz.dart';
 import 'package:arcore_flutter_plugin_example/module/animal_view/state_management/ar_gex.dart';
 import 'package:arcore_flutter_plugin_example/module/animal_view/view/animal_ar.dart';
 import 'package:arcore_flutter_plugin_example/common/constant/list_of_animals.dart';
@@ -60,6 +61,9 @@ class SettingInAnimalScreen extends StatelessWidget {
               onTap: ()=>Get.toNamed(AnimalAR.routeName),
             ),
             borderSetting(
+              onTap: (){
+                Get.toNamed(AnimalQuaz.routeName);
+              },
                 child: Icon(Icons.article, color: Colors.white), text: LocaleKey.quize.tr),
           ],
         );

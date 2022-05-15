@@ -1,9 +1,12 @@
 import 'dart:developer';
 
 import 'package:arcore_flutter_plugin_example/common/controller/localizations/locale_getx.dart';
+import 'package:arcore_flutter_plugin_example/common/controller/shared_preferences/share_pref_kwy.dart';
 import 'package:arcore_flutter_plugin_example/module/setting/state_managment/setting_getx.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../main.dart';
 
 class RadioListTileWidget extends StatelessWidget {
   const RadioListTileWidget({
@@ -35,8 +38,10 @@ class RadioListTileWidget extends StatelessWidget {
             loginGetx.changeRadioValue(v);
             if (v == 1) {
               localeGetx.changeLang("ar");
+              sharedPreferences.setString(PrefKey.localization, 'ar');
             } else {
               localeGetx.changeLang("en");
+              sharedPreferences.setString(PrefKey.localization, 'en');
             }
           }),
     );

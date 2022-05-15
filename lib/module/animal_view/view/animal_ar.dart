@@ -4,7 +4,7 @@ import 'package:arcore_flutter_plugin_example/module/home/state_management/hom_g
 import 'package:flutter/material.dart';
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:get/get.dart';
-
+import 'package:vector_math/vector_math_64.dart' as vector;
 
 class AnimalAR extends StatefulWidget {
   const AnimalAR({Key key}) : super(key: key);
@@ -47,14 +47,18 @@ String animalName='';
     log("_onArCoreViewCreated");
     arCoreController.onNodeTap = (name) => onTapHandler(name);
     arCoreController.onPlaneTap = _handleOnPlaneTap;
+
   }
 
   void _addToucano(ArCoreHitTestResult plane) {
+    log('vector.Vector3.random() is ${vector.Vector3.random()}');
     final toucanoNode = ArCoreReferenceNode(
         name: '$animalName.sfb',
         object3DFileName: '$animalName.sfb',
         position: plane.pose.translation,
-        rotation: plane.pose.rotation);
+        rotation: plane.pose.rotation,
+
+    );
 
     arCoreController.addArCoreNodeWithAnchor(toucanoNode);
   }

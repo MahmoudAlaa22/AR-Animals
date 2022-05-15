@@ -13,11 +13,9 @@ class AnimalScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final HomeGetx controller = Get.put(HomeGetx());
+    final controller = Get.find<HomeGetx>();
     final textStyle = Get.textTheme.bodyText2;
     final int item = controller.itemSelected;
-    log("Get locale in animal screen ${Get.locale}");
-    log('animalsItems[item].name.tr is ${LocaleKey.bearDescription.tr}');
     return Scaffold(
         backgroundColor: Color(0xff508ced),
         body: ScreenModelWidget(
@@ -29,58 +27,18 @@ class AnimalScreen extends StatelessWidget {
               Expanded(
                   child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  animalsItems[item].description.tr,
-                  textAlign: TextAlign.justify,
-                  style: textStyle?.copyWith(color: Colors.white, fontSize: 25),
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 30),
+                  child: Text(
+                    animalsItems[item].description.tr,
+                    textAlign: TextAlign.justify,
+                    style: textStyle?.copyWith(color: Colors.white, fontSize: 25),
+                  ),
                 ),
-              ))
+              )),
             ],
           ),
         )
-        // Row(
-        //   children: [
-        //     Container(
-        //       constraints: BoxConstraints.expand(width: Get.width / 3),
-        //       color: Colors.black38,
-        //       child: Column(
-        //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //         children: [
-        //           Image.asset(
-        //             animalsItems[item].image,
-        //             height: Get.height * 0.5,
-        //           ),
-        //           Text(
-        //             animalsItems[item].name.tr,
-        //             style: TextStyle(
-        //                 color: Colors.white,
-        //                 fontSize: 50,
-        //                 fontWeight: FontWeight.bold),
-        //           )
-        //         ],
-        //       ),
-        //     ),
-        //     Expanded(
-        //       child: Container(
-        //         child: Column(
-        //           children: [
-        //             SettingInAnimalScreen(),
-        //             Expanded(child: SingleChildScrollView(
-        //               padding: EdgeInsets.symmetric(horizontal: 10),
-        //               child: Text(animalsItems[item].description.tr,
-        //               textAlign:TextAlign.justify,
-        //               style: textStyle?.copyWith(
-        //                 color: Colors.white,
-        //                 fontSize: 25
-        //               ),
-        //               ),
-        //             ))
-        //           ],
-        //         ),
-        //       ),
-        //     )
-        //   ],
-        // ),
         );
   }
 }

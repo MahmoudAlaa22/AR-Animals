@@ -3,7 +3,7 @@ description: Demonstrates how to use the arcore_flutter_plugin plugin.
 publish_to: 'none'
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
@@ -17,6 +17,9 @@ dependencies:
   circle_wheel_scroll: ^0.0.1+1
   flutter_svg:
   just_audio: ^0.9.20
+  shared_preferences: ^2.0.13
+  auto_size_text: ^3.0.0
+  confetti:
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,4 +1,5 @@
 import 'package:arcore_flutter_plugin_example/module/about_us/about_us.dart';
+import 'package:arcore_flutter_plugin_example/module/animal_quaz/animal_quaz.dart';
 import 'package:arcore_flutter_plugin_example/module/animal_view/view/animal_ar.dart';
 import 'package:arcore_flutter_plugin_example/module/animal_view/view/animal_screen.dart';
 import 'package:arcore_flutter_plugin_example/module/connect_us/connect_us.dart';
@@ -44,6 +45,10 @@ class AppPages {
     GetPage(
         name: AboutUs.routeName,
         page: ()=>AboutUs()
+    ),
+    GetPage(
+        name: AnimalQuaz.routeName,
+        page: ()=>AnimalQuaz()
     ),
   ];
 }
