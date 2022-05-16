@@ -28,7 +28,7 @@ class AnimalQuaz extends StatelessWidget {
       GetBuilder<AnimalQuazGetx>(
         init: AnimalQuazGetx(),
           builder: (controller){
-            final list = listOfAnswers[controller.questionNumber] as List;
+            // final list = listOfAnswers[controller.questionNumber] as List;
         return Stack(
           alignment:Alignment.center ,
           children: [
@@ -46,7 +46,7 @@ class AnimalQuaz extends StatelessWidget {
                         child: ListView.builder(
                           physics: NeverScrollableScrollPhysics(),
                             padding: const EdgeInsets.symmetric(horizontal: 20),
-                            itemCount: list.length,
+                            itemCount: controller.answerList.length,
                             itemExtent: 65,
                             itemBuilder: (_, index) {
                               return Padding(
@@ -56,7 +56,7 @@ class AnimalQuaz extends StatelessWidget {
                                     controller.changeItemSelected(index);
                                   },
                                   selected: index==controller.itemSelected,
-                                  text: list[index],
+                                  text: controller.answerList[index],
                                   paddingVertical: 5,
                                   paddingHorizontal: 5,
                                   color: controller.changeColor(index)
@@ -77,7 +77,7 @@ class AnimalQuaz extends StatelessWidget {
                           child: SettingButtonWidget(
                             onTap: (){
                               controller.checkAnswer(animalSelected: item,
-                                  answer:list[controller.itemSelected] );
+                                  answer:controller.answerList[controller.itemSelected] );
                             },
                             width: 130,
                             paddingVertical: 2,

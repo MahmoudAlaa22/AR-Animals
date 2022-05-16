@@ -1,8 +1,8 @@
-import 'dart:developer';
 import 'dart:math';
 
 import 'package:arcore_flutter_plugin_example/common/assets/sounds.dart';
 import 'package:arcore_flutter_plugin_example/common/constant/list_of_animals.dart';
+import 'package:arcore_flutter_plugin_example/common/constant/list_of_answers.dart';
 import 'package:arcore_flutter_plugin_example/common/controller/localizations/locale_key.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +15,11 @@ class AnimalQuazGetx extends GetxController {
   AudioPlayer player = AudioPlayer();
   bool answerIsRight = false;
   ConfettiController controllerCenter;
+  List answerList=[];
 
   @override
   void onInit() {
+    getAnswerList();
     controllerCenter =
         ConfettiController(duration: const Duration(seconds: 5));
     super.onInit();
@@ -26,6 +28,25 @@ class AnimalQuazGetx extends GetxController {
   void dispose() {
     controllerCenter.dispose();
     super.dispose();
+  }
+void getAnswerList(){
+  answerList=getRandomElement(listOfAnswers[questionNumber]);
+  update();
+}
+  List getRandomElement<T>(List<T> list){
+    List l=[];
+    final random= Random();
+    var i=1;
+    while(i==1){
+      var   element= random.nextInt(list.length);
+      if(!l.contains(list[element])){
+        l.add(list[element]);
+        if(l.length==list.length){
+          break;
+        }
+      }
+    }
+    return l;
   }
   void changeItemSelected(int index) {
     itemSelected = index;
@@ -86,6 +107,8 @@ class AnimalQuazGetx extends GetxController {
     await Future.delayed(Duration(seconds: 2));
     itemSelected=null;
     changeQuestionNumber(num + 1);
+    getAnswerList();
+
   }
 
   void answerWrong() {
