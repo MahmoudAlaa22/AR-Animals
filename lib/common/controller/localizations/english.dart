@@ -76,6 +76,7 @@ Map<String, String> english = {
   LocaleKey.arabic: "arabic",
   LocaleKey.english: "english",
   LocaleKey.aboutUs: "about us",
+  LocaleKey.aboutUsDescription: "We are a group of programmers with the highest level of experience gathered in a team called DEVS to make applications, programs, and educational websites that facilitate the learning process, by seeing the things he learns using Augmented Reality.",
   LocaleKey.q1: "What is the name of this animal?",
   LocaleKey.q2: 'What is the name of the female this animal?',
   LocaleKey.q3: 'What is the name of the baby of this animal?',
@@ -86,4 +87,9 @@ Map<String, String> english = {
   LocaleKey.tryAgain:'Try again',
   LocaleKey.wellDone:'Well done',
   LocaleKey.youHaveSuccessfullyCompletedAllTheQuestions:'You have successfully completed all the questions.',
+  LocaleKey.forAnyInquiriesPleaseEmail:'For any inquiries please email.',
+  LocaleKey.categoryItem:'Here you can select any animal to learn about it.',
+  LocaleKey.scanAnimal:'Here you can scan any animal to show in AR.',
+  LocaleKey.startDescription:'Click here it to start and learn about this animal.',
+  LocaleKey.skip:'SKIP',
 };

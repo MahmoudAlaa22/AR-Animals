@@ -59,27 +59,6 @@ class SettingScreen extends StatelessWidget {
                         ),
                       ),
                       Divider(thickness: 2,),
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        leading: Icon(Icons.group,color: Colors.white,),
-                        title: Text(LocaleKey.aboutUs.tr.capitalizeFirst,
-                          style: TextStyle(
-                              fontSize: 25,fontWeight:FontWeight.bold,
-                              color: Colors.white
-                          ),),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.black38,
-                            borderRadius:BorderRadius.circular(25)
-                        ),
-                        child: Text('adasdasd asdasdasdasdsd',
-                            style: TextStyle(
-                                fontSize: 25,fontWeight:FontWeight.bold,
-                                color: Colors.white
-                            )),
-                      )
                     ],
                   ),
                 ),

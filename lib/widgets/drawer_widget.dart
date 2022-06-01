@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:arcore_flutter_plugin_example/common/controller/localizations/locale_getx.dart';
 import 'package:arcore_flutter_plugin_example/common/controller/localizations/locale_key.dart';
+import 'package:arcore_flutter_plugin_example/module/about_us/about_us.dart';
 import 'package:arcore_flutter_plugin_example/module/connect_us/connect_us.dart';
 import 'package:arcore_flutter_plugin_example/module/setting/setting.dart';
 import 'package:arcore_flutter_plugin_example/widgets/setting_button_widget.dart';
@@ -28,7 +29,10 @@ class DrawerWidget extends StatelessWidget {
               onTap: (){
                 Get.toNamed(ConnectUs.routeName);
               },),
-            SettingButtonWidget(text: LocaleKey.quitApp,color: Colors.deepPurple,),
+            SettingButtonWidget(text: LocaleKey.aboutUs,color: Colors.deepPurple,
+              onTap: (){
+                Get.toNamed(AboutUs.routeName);
+              },),
           ],
         ),
       ),

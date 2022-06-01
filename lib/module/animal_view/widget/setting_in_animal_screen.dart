@@ -7,30 +7,11 @@ import 'package:arcore_flutter_plugin_example/module/home/state_management/hom_g
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'bortder_setting_widget.dart';
+
 
 class SettingInAnimalScreen extends StatelessWidget {
-  Widget borderSetting({Widget child, String text, Function onTap}) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        child: Column(
-          children: [
-            Container(
-                padding: EdgeInsets.all(2),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: Colors.white)),
-                child: child),
-            Text(
-              text,
-              style: TextStyle(color: Colors.white),
-            )
-          ],
-        ),
-      ),
-    );
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -53,18 +34,18 @@ class SettingInAnimalScreen extends StatelessWidget {
                 },
                 child: Icon(
                   Icons.music_note,
-                  color: Colors.white,
+                  color: Color(0xff508ced),
                 ),
                 text: LocaleKey.sound.tr),
             borderSetting(
-              child: Icon(Icons.threed_rotation_sharp, color: Colors.white), text: LocaleKey.AR.tr,
+              child: Icon(Icons.threed_rotation_sharp, color: Color(0xff508ced)), text: LocaleKey.AR.tr,
               onTap: ()=>Get.toNamed(AnimalAR.routeName),
             ),
             borderSetting(
               onTap: (){
                 Get.toNamed(AnimalQuaz.routeName);
               },
-                child: Icon(Icons.article, color: Colors.white), text: LocaleKey.quize.tr),
+                child: Icon(Icons.article, color: Color(0xff508ced)), text: LocaleKey.quize.tr),
           ],
         );
       },

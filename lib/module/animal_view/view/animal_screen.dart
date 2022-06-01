@@ -23,7 +23,10 @@ class AnimalScreen extends StatelessWidget {
           text: animalsItems[item].name,
           child: Column(
             children: [
-              SettingInAnimalScreen(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: SettingInAnimalScreen(),
+              ),
               Expanded(
                   child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(horizontal: 10),

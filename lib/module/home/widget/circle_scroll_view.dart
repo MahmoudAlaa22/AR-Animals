@@ -11,20 +11,40 @@ class CircleScrollView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final homeGetx=Get.put(HomeGetx());
     return GetBuilder<HomeGetx>(
       init: HomeGetx(),
+        initState: (v)async{
+        await homeGetx.getIsTutorialCoachMark();
+        if(homeGetx.isTutorialCoachMark!=true)
+          homeGetx.showTutorial(context);
+        },
         builder: (controller){
-          return CircleListScrollView(
-            physics: CircleFixedExtentScrollPhysics(),
-            axis: Axis.horizontal,
-            itemExtent: Get.height*0.9,
-            children: List.generate(animalsItems.length,itemsOfAnimals),
-            radius: Get.width * 0.4,
-            onSelectedItemChanged: (v){
-              log("asf $v");
-              controller.changeItemSelected(v);
-              // Get.to(AnimalView());
-            },
+          return Stack(
+            children: [
+              Center(
+                child: Container(
+                  key: controller.categoryItemKey,
+                  width: 200,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              ),
+              CircleListScrollView(
+                physics: CircleFixedExtentScrollPhysics(),
+                axis: Axis.horizontal,
+                itemExtent: Get.height*0.9,
+                children: List.generate(animalsItems.length,itemsOfAnimals),
+                radius: Get.width * 0.4,
+                onSelectedItemChanged: (v){
+                  log("asf $v");
+                  controller.changeItemSelected(v);
+                  // Get.to(AnimalView());
+                },
+              ),
+            ],
           );
     });
 

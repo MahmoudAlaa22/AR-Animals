@@ -18,6 +18,7 @@ abstract class Images {
   static const shark = '$_pngIconPath/shark.png';
   static const snake = '$_pngIconPath/snake.png';
   static const connectUs = '$_pngIconPath/connect_us.png';
+  static const aboutUs = '$_pngIconPath/about_us.png';
   static const setting = '$_pngIconPath/setting.png';
 
 }

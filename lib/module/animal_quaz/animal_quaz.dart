@@ -6,6 +6,7 @@ import 'package:arcore_flutter_plugin_example/common/constant/list_of_answers.da
 import 'package:arcore_flutter_plugin_example/common/constant/list_of_quazzes.dart';
 import 'package:arcore_flutter_plugin_example/common/controller/localizations/locale_key.dart';
 import 'package:arcore_flutter_plugin_example/module/home/state_management/hom_getx.dart';
+import 'package:arcore_flutter_plugin_example/widgets/animated_button_widget/animated_button_widget.dart';
 import 'package:arcore_flutter_plugin_example/widgets/screen_model_widget.dart';
 import 'package:arcore_flutter_plugin_example/widgets/setting_button_widget.dart';
 import 'package:confetti/confetti.dart';
@@ -74,16 +75,21 @@ class AnimalQuaz extends StatelessWidget {
                               boxShadow: [BoxShadow(blurRadius: 10,offset:Offset(0,3),
                                   color: Colors.black54)]
                           ),
-                          child: SettingButtonWidget(
-                            onTap: (){
+                          child: AnimatedButtonWidget(
+                             color: Colors.pink,
+                            width: 130,
+                            onPressed: (){
                               controller.checkAnswer(animalSelected: item,
                                   answer:controller.answerList[controller.itemSelected] );
                             },
-                            width: 130,
-                            paddingVertical: 2,
-                            paddingHorizontal: 0,
-                            text:   LocaleKey.check,
-                            color: Colors.pinkAccent,
+                            child: SettingButtonWidget(
+                              onTap: (){},
+                              width: 130,
+                              paddingVertical: 2,
+                              paddingHorizontal: 0,
+                              text:   LocaleKey.check,
+                              // color: Colors.pinkAccent,
+                            ),
                           ),
                         ),
                       )
