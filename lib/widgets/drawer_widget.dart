@@ -23,14 +23,17 @@ class DrawerWidget extends StatelessWidget {
           children: [
             SettingButtonWidget(text: LocaleKey.setting,color: Colors.blue,
             onTap: (){
+              Get.back();
               Get.toNamed(SettingScreen.routeName);
             },),
             SettingButtonWidget(text: LocaleKey.connectUs,color: Colors.pinkAccent,
               onTap: (){
+                Get.back();
                 Get.toNamed(ConnectUs.routeName);
               },),
             SettingButtonWidget(text: LocaleKey.aboutUs,color: Colors.deepPurple,
               onTap: (){
+                Get.back();
                 Get.toNamed(AboutUs.routeName);
               },),
           ],

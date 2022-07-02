@@ -16,7 +16,12 @@ class HomeGetx extends GetxController {
   GlobalKey scanAnimalKey = GlobalKey();
   GlobalKey startButton = GlobalKey();
   bool isTutorialCoachMark;
+  int coin=15;
 
+  void changeCionValue({@required int value}){
+    coin+=value;
+    update();
+  }
 Future<void> getIsTutorialCoachMark()async{
   isTutorialCoachMark= sharedPreferences.getBool(PrefKey.tutorialCoachMark);
   update();
@@ -38,7 +43,6 @@ Future<void> getIsTutorialCoachMark()async{
       paddingFocus: 10,
       opacityShadow: 0.8,
       onFinish: () {
-        print("finish");
         sharedPreferences.setBool(PrefKey.tutorialCoachMark, true);
       },
       onClickTarget: (target) {

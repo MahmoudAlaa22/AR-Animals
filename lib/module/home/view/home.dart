@@ -1,11 +1,10 @@
-import 'package:arcore_flutter_plugin_example/common/controller/localizations/locale_getx.dart';
+import 'package:arcore_flutter_plugin_example/common/assets/images.dart';
 import 'package:arcore_flutter_plugin_example/module/home/widget/circle_scroll_view.dart';
-import 'package:arcore_flutter_plugin_example/module/home/widget/items_of_animals.dart';
+import 'package:arcore_flutter_plugin_example/module/home/widget/coin_widget.dart';
 import 'package:arcore_flutter_plugin_example/module/home/widget/scan_button.dart';
 import 'package:arcore_flutter_plugin_example/module/home/widget/shadow_in_home_view.dart';
 import 'package:arcore_flutter_plugin_example/module/home/widget/start_button.dart';
 import 'package:arcore_flutter_plugin_example/widgets/drawer_widget.dart';
-import 'package:circle_wheel_scroll/circle_wheel_scroll_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -39,7 +38,9 @@ class HomeView extends StatelessWidget {
               , icon: Icon(Icons.menu,color: Colors.white,
                   size: 40,
                   )),
-            )
+            ),
+            CoinWidget()
+
           ],
         ),
       ),

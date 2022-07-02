@@ -11,6 +11,7 @@ class AboutUs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ScreenModelWidget(
+        showSound: false,
         image: Images.aboutUs,
         text: LocaleKey.aboutUs,
         child: SingleChildScrollView(

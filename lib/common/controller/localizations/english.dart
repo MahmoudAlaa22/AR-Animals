@@ -92,4 +92,7 @@ Map<String, String> english = {
   LocaleKey.scanAnimal:'Here you can scan any animal to show in AR.',
   LocaleKey.startDescription:'Click here it to start and learn about this animal.',
   LocaleKey.skip:'SKIP',
+  LocaleKey.congratulations:'Congratulations',
+  LocaleKey.erorr:'Erorr',
+  LocaleKey.thisAnimalCannotBeUnlockedRightNow:'This animal cannot be unlocked right now.',
 };

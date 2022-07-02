@@ -87,4 +87,7 @@ class LocaleKey {
   static const scanAnimal = 'scanAnimal';
   static const startDescription = 'startDescription';
   static const skip = 'skip';
+  static const erorr = 'erorr';
+  static const congratulations = 'congratulations';
+  static const thisAnimalCannotBeUnlockedRightNow = 'thisAnimalCannotBeUnlockedRightNow';
 }

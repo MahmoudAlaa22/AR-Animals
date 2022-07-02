@@ -20,5 +20,7 @@ abstract class Images {
   static const connectUs = '$_pngIconPath/connect_us.png';
   static const aboutUs = '$_pngIconPath/about_us.png';
   static const setting = '$_pngIconPath/setting.png';
+  static const lock = '$_pngIconPath/lock.png';
+  static const star = '$_pngIconPath/star.png';
 
 }

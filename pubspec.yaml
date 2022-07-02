@@ -13,15 +13,17 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  get: ^4.6.1
-  circle_wheel_scroll: ^0.0.1+1
-  flutter_svg:
-  just_audio: ^0.9.20
-  shared_preferences: ^2.0.13
+  get: ^4.6.1 # بستخدمها في اني اتحكم ف المتغيرات ال عندي
+  circle_wheel_scroll: ^0.0.1+1 #Circle Wheel Scroll ال في الصفحه الرئيسيه
+  flutter_svg: # بستخدمها عشان الصور ال الصيغه بتاعتها SVG
+  just_audio: ^0.9.20  # بستخدمها في عرض اصوات الحيوانات
+  shared_preferences: ^2.0.13 # بستخدمها عشان اخزن البيانات عندي علي الفون
+  confetti: # بستخدمها عشان أظهر النجوم ال بتظهر لما بحل الاختبار
+  tutorial_coach_mark: ^1.2.3 # بستخدمها في بدايه التطبيق بتظهر مره واحده بتشرح كل زرار مثلا بيعمل اي
+  flutter_tts: ^3.4.0 # Text To Speech  بستخدمها لما بيبقي التطبيق بالانجليزي و عاوز اسمع صوت السؤال بتاع الاختبار
+  url_launcher: ^6.1.3 # بستخدمها في انا لما ادوس ع الايميل ال موجود في تواصل معنا يروح ع طول لل Gmail
   auto_size_text: ^3.0.0
-  confetti:
-  tutorial_coach_mark: ^1.2.3
-  flutter_tts: ^3.4.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

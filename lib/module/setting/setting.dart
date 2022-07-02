@@ -18,6 +18,7 @@ class SettingScreen extends StatelessWidget {
           init: SettingGetx(),
           builder: (controller) {
             return ScreenModelWidget(
+              showSound: false,
               image: Images.setting,
               text: LocaleKey.setting,
               child: SafeArea(

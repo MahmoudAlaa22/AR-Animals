@@ -9,7 +9,6 @@ import 'package:get/get.dart';
 
 class StartButton extends StatelessWidget {
 
-
   @override
   Widget build(BuildContext context) {
     final HomeGetx controller = Get.put(HomeGetx());
@@ -18,7 +17,16 @@ class StartButton extends StatelessWidget {
       child: AnimatedButtonWidget(
         onPressed: () {
           log("controller.itemSelected is ${controller.itemSelected}");
-          Get.toNamed(AnimalScreen.routeName);
+          if(controller.itemSelected <= (controller.coin/15-1)) {
+            Get.toNamed(AnimalScreen.routeName);
+          }
+          else{
+            Get.snackbar(LocaleKey.erorr.tr, LocaleKey.thisAnimalCannotBeUnlockedRightNow.tr,
+            backgroundColor: Colors.red,
+              colorText: Colors.white
+            );
+          }
+            
         },
         color: Colors.orange,
         child: Container(

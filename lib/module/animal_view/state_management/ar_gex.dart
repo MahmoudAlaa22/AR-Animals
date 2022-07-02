@@ -30,6 +30,5 @@ class ArGetx extends GetxController{
     await flutterTts.setLanguage('en-US');
     await flutterTts.setPitch(1);
     await flutterTts.speak(text);
-    // log('flutterTts.getLanguages is $l');
   }
 }

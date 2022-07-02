@@ -5,6 +5,7 @@ import 'package:arcore_flutter_plugin_example/module/animal_view/view/animal_scr
 import 'package:arcore_flutter_plugin_example/module/connect_us/connect_us.dart';
 import 'package:arcore_flutter_plugin_example/module/home/view/home.dart';
 import 'package:arcore_flutter_plugin_example/module/home/view/scan_animal_view.dart';
+import 'package:arcore_flutter_plugin_example/module/login/login_screen.dart';
 import 'package:arcore_flutter_plugin_example/module/setting/setting.dart';
 import 'package:arcore_flutter_plugin_example/module/splash/view/splash.dart';
 import 'package:get/get.dart';
@@ -49,6 +50,10 @@ class AppPages {
     GetPage(
         name: AnimalQuaz.routeName,
         page: ()=>AnimalQuaz()
+    ),
+    GetPage(
+        name: LoginScreen.routeName,
+        page: ()=>LoginScreen()
     ),
   ];
 }

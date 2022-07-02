@@ -91,4 +91,7 @@ Map<String, String> arabic = {
   LocaleKey.scanAnimal:'هنا يمكنك مسح أي حيوان لتظهر في الواقع المعزز.',
   LocaleKey.startDescription:'انقر هنا للبدء والتعرف على هذا الحيوان.',
   LocaleKey.skip:'تخطى',
+  LocaleKey.congratulations:'تهانينا',
+  LocaleKey.erorr:'خطاء',
+  LocaleKey.thisAnimalCannotBeUnlockedRightNow:'لا يمكن فتح هذا الحيوان الآن.',
 };

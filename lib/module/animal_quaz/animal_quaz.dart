@@ -25,97 +25,102 @@ class AnimalQuaz extends StatelessWidget {
     // final textStyle = Get.textTheme.bodyText2;
 
     return Scaffold(
-      body:
-      GetBuilder<AnimalQuazGetx>(
-        init: AnimalQuazGetx(),
-          builder: (controller){
-            // final list = listOfAnswers[controller.questionNumber] as List;
-        return Stack(
-          alignment:Alignment.center ,
-          children: [
-            ScreenModelWidget(
-              image: animalsItems[item].image,
-              text: listOfQuazzes[controller.questionNumber],
-              child: Padding(
-                padding: const EdgeInsets.only(top: 50),
-                child: SingleChildScrollView(
-                  physics: BouncingScrollPhysics(),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 65.0*4,
-                        child: ListView.builder(
-                          physics: NeverScrollableScrollPhysics(),
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
-                            itemCount: controller.answerList.length,
-                            itemExtent: 65,
-                            itemBuilder: (_, index) {
-                              return Padding(
-                                padding: const EdgeInsets.all(5.0),
+      body: GetBuilder<AnimalQuazGetx>(
+          init: AnimalQuazGetx(),
+          builder: (controller) {
+            return Stack(
+              alignment: Alignment.center,
+              children: [
+                ScreenModelWidget(
+                  image: animalsItems[item].image,
+                  text: listOfQuazzes[controller.questionNumber],
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: SingleChildScrollView(
+                      physics: BouncingScrollPhysics(),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 65.0 * 4,
+                            child: ListView.builder(
+                                physics: NeverScrollableScrollPhysics(),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 20),
+                                itemCount: controller.answerList.length,
+                                itemExtent: 65,
+                                itemBuilder: (_, index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.all(5.0),
+                                    child: SettingButtonWidget(
+                                      onTap: () {
+                                        controller.changeItemSelected(index);
+                                      },
+                                      selected:
+                                          index == controller.itemSelected,
+                                      text: controller.answerList[index],
+                                      paddingVertical: 5,
+                                      paddingHorizontal: 5,
+                                      color: controller.changeColor(index),
+                                    ),
+                                  );
+                                }),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 20, top: 20),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(25),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        blurRadius: 10,
+                                        offset: Offset(0, 3),
+                                        color: Colors.black54)
+                                  ]),
+                              child: AnimatedButtonWidget(
+                                color: Colors.pink,
+                                width: 130,
+                                onPressed: () {
+                                  controller.checkAnswer(
+                                      animalSelected: item,
+                                      answer: controller
+                                          .answerList[controller.itemSelected]);
+                                },
                                 child: SettingButtonWidget(
-                                  onTap: (){
-                                    controller.changeItemSelected(index);
-                                  },
-                                  selected: index==controller.itemSelected,
-                                  text: controller.answerList[index],
-                                  paddingVertical: 5,
-                                  paddingHorizontal: 5,
-                                  color: controller.changeColor(index)
-                                  // index==controller.itemSelected?Colors.black54:Colors.black38
-                                  ,
+                                  onTap: () {},
+                                  width: 130,
+                                  paddingVertical: 2,
+                                  paddingHorizontal: 0,
+                                  text: LocaleKey.check,
+                                  // color: Colors.pinkAccent,
                                 ),
-                              );
-                            }),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 20,top: 20),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius:BorderRadius.circular(25) ,
-                              boxShadow: [BoxShadow(blurRadius: 10,offset:Offset(0,3),
-                                  color: Colors.black54)]
-                          ),
-                          child: AnimatedButtonWidget(
-                             color: Colors.pink,
-                            width: 130,
-                            onPressed: (){
-                              controller.checkAnswer(animalSelected: item,
-                                  answer:controller.answerList[controller.itemSelected] );
-                            },
-                            child: SettingButtonWidget(
-                              onTap: (){},
-                              width: 130,
-                              paddingVertical: 2,
-                              paddingHorizontal: 0,
-                              text:   LocaleKey.check,
-                              // color: Colors.pinkAccent,
+                              ),
                             ),
-                          ),
-                        ),
-                      )
-                    ],
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-            ConfettiWidget(
-              confettiController: controller.controllerCenter,
-              blastDirectionality: BlastDirectionality
-                  .explosive, // don't specify a direction, blast randomly
-              shouldLoop:
-              true, // start again as soon as the animation is finished
-              colors: const [
-                Colors.green,
-                Colors.blue,
-                Colors.pink,
-                Colors.orange,
-                Colors.purple
-              ], // manually specify the colors to be used
-              createParticlePath: controller.drawStar, // define a custom shape/path.
-            )
-          ],
-        );
-      }),
+                ConfettiWidget(
+                  confettiController: controller.controllerCenter,
+                  blastDirectionality: BlastDirectionality.explosive,
+                  // don't specify a direction, blast randomly
+                  shouldLoop: true,
+                  // start again as soon as the animation is finished
+                  colors: const [
+                    Colors.green,
+                    Colors.blue,
+                    Colors.pink,
+                    Colors.orange,
+                    Colors.purple
+                  ],
+                  // manually specify the colors to be used
+                  createParticlePath:
+                      controller.drawStar, // define a custom shape/path.
+                )
+              ],
+            );
+          }),
     );
   }
 }

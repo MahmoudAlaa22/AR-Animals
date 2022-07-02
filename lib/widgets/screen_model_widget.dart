@@ -6,11 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ScreenModelWidget extends StatelessWidget {
-  const ScreenModelWidget({this.image, this.text, this.child});
+  const ScreenModelWidget({this.image, this.text, this.child, this.showSound=true});
 
   final String image;
   final String text;
   final Widget child;
+  final bool showSound;
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +35,16 @@ class ScreenModelWidget extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    AutoSizeText(
-                      text.tr.capitalizeFirst,
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                      minFontSize: 30,
-                      maxLines: 50,
+                    Expanded(
+                      child: AutoSizeText(
+                        text.tr.capitalizeFirst,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                        minFontSize: 30,
+                        maxLines: 50,
+                      ),
                     ),
-                    if (Get.locale.toString() == 'en')
+                    if (Get.locale.toString() == 'en'&&showSound)
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: IconButton(

@@ -1,9 +1,13 @@
 import 'dart:math';
 
+import 'package:arcore_flutter_plugin_example/common/assets/images.dart';
 import 'package:arcore_flutter_plugin_example/common/assets/sounds.dart';
 import 'package:arcore_flutter_plugin_example/common/constant/list_of_animals.dart';
 import 'package:arcore_flutter_plugin_example/common/constant/list_of_answers.dart';
 import 'package:arcore_flutter_plugin_example/common/controller/localizations/locale_key.dart';
+import 'package:arcore_flutter_plugin_example/common/theme/text_style.dart';
+import 'package:arcore_flutter_plugin_example/module/home/state_management/hom_getx.dart';
+import 'package:arcore_flutter_plugin_example/widgets/animated_button_widget/animated_button_widget.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,40 +18,44 @@ class AnimalQuazGetx extends GetxController {
   int questionNumber = 0;
   AudioPlayer player = AudioPlayer();
   bool answerIsRight = false;
+  bool addCoins = false;
   ConfettiController controllerCenter;
-  List answerList=[];
+  List answerList = [];
 
   @override
   void onInit() {
     getAnswerList();
-    controllerCenter =
-        ConfettiController(duration: const Duration(seconds: 5));
+    controllerCenter = ConfettiController(duration: const Duration(seconds: 5));
     super.onInit();
   }
+
   @override
   void dispose() {
     controllerCenter.dispose();
     super.dispose();
   }
-void getAnswerList(){
-  answerList=getRandomElement(listOfAnswers[questionNumber]);
-  update();
-}
-  List getRandomElement<T>(List<T> list){
-    List l=[];
-    final random= Random();
-    var i=1;
-    while(i==1){
-      var   element= random.nextInt(list.length);
-      if(!l.contains(list[element])){
+
+  void getAnswerList() {
+    answerList = getRandomElement(listOfAnswers[questionNumber]);
+    update();
+  }
+
+  List getRandomElement<T>(List<T> list) {
+    List l = [];
+    final random = Random();
+    var i = 1;
+    while (i == 1) {
+      var element = random.nextInt(list.length);
+      if (!l.contains(list[element])) {
         l.add(list[element]);
-        if(l.length==list.length){
+        if (l.length == list.length) {
           break;
         }
       }
     }
     return l;
   }
+
   void changeItemSelected(int index) {
     itemSelected = index;
     playAudio(Sounds.selectItem);
@@ -90,10 +98,43 @@ void getAnswerList(){
         playAudio(Sounds.finishingQuiz);
         answerIsRight = true;
         controllerCenter.play();
+        final homeGetx = Get.find<HomeGetx>();
+        if (!addCoins) homeGetx.changeCionValue(value: 15);
+        addCoins = true;
         update();
         Get.snackbar(LocaleKey.wellDone.tr,
             LocaleKey.youHaveSuccessfullyCompletedAllTheQuestions.tr,
             backgroundColor: Colors.green, colorText: Colors.white);
+        Get.defaultDialog(
+            title: '${LocaleKey.congratulations.tr} 🎉',
+            content: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  Images.star,
+                  height: 60,
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text('${homeGetx.coin-15}',
+                    style: AppTextStyle.robotoTextStyle
+                        .copyWith(fontWeight: FontWeight.bold,
+                      fontSize: 30
+                    )),
+              ],
+            ),
+            actions: [
+              AnimatedButtonWidget(
+                color: Colors.green,
+                onPressed: () {Get.back();},
+                child: Text(
+                  LocaleKey.wellDone.tr.capitalize,
+                  style: AppTextStyle.robotoTextStyle.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+              )
+            ]);
       } else {
         answerWrong();
       }
@@ -105,10 +146,9 @@ void getAnswerList(){
     answerIsRight = true;
     update();
     await Future.delayed(Duration(seconds: 2));
-    itemSelected=null;
+    itemSelected = null;
     changeQuestionNumber(num + 1);
     getAnswerList();
-
   }
 
   void answerWrong() {
@@ -138,6 +178,7 @@ void getAnswerList(){
       return Colors.black38;
     }
   }
+
   /// A custom Path to paint stars.
   Path drawStar(Size size) {
     // Method to convert degree to radians
